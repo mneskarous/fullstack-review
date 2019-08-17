@@ -9,7 +9,7 @@ let getReposByUsername = (username) => {
   // but you'll have to fill in the URL
 
   let options = {
-    url: 'https://api.github.com/repos/request/request',
+    url: `https://api.github.com/users/${username}/repos`,
     headers: {
       'User-Agent': 'request',
       'Authorization': `token ${config.TOKEN}`
@@ -19,11 +19,12 @@ let getReposByUsername = (username) => {
   callback(error, response, body) => {
     if (!error && response.statusCode === 200) {
       var info = JSON.parse(body);
+      // console.log()
       console.log(info.owner.login);
       console.log(info.name);
       console.log(info.html_url);
       console.log(info.watchers);
-      response.send({info.owner.login, info.name,  info.html_url, info.watchers});
+      response.send({info.owner.login, info.name, info.html_url, info.watchers});
     }
   }
 
