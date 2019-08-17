@@ -13,7 +13,7 @@ let repoSchema = new mongoose.Schema({
     login: String
   },
   name: String,
-  url: { type: String, unique: true },
+  html_url: { type: String, unique: true },
   watchers: Number
 });
 
