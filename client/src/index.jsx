@@ -20,7 +20,7 @@ class App extends React.Component {
     axios
       .post('/repos', { username: term })
       .then(() => console.log(this.state))
-      .catch(err => console.error(err))
+      .catch(err => console.error(err));
   }
 
   render () {
